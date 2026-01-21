@@ -12,39 +12,30 @@ Note :- Running this script will delete any stored data if the database already 
 */
 
 
-
-
-
-
 -- Switching to master
-
 USE master;
 GO
 
 -- Check if the database exists or not. If yes drop and create new
-
-IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWareHouse')
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'Data_Ware_House')
 BEGIN
-	ALTER DATABASE DataWareHouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-	DROP DATABASE DataWareHouse;
+	ALTER DATABASE Data_Ware_House SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE Data_Ware_House;
 END;
 GO
 
--- Creating DataBase 'DataWareHouse'
 
-CREATE DATABASE DataWareHouse;
+-- Creating DataBase 'DataWareHouse'
+CREATE DATABASE Data_Ware_House;
 GO
 
-USE DataWareHouse;
+USE Data_Ware_House;
 GO
 
 -- Creating Schemas
-
-CREATE SCHEMA bronze;
+CREATE SCHEMA bronze_layer;
 GO
-
-CREATE SCHEMA silver;
+CREATE SCHEMA silver_layer;
 GO
-
-CREATE SCHEMA gold;
+CREATE SCHEMA gold_layer;
 GO
