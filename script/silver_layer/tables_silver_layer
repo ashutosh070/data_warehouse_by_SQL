@@ -1,3 +1,9 @@
+/*
+This DDL script is used in SILVER layer to create Tables.
+And, DROP tables if they already exists
+*/
+
+-- Creating Tables in Silver Layer
 IF OBJECT_ID('silver_layer.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE silver_layer.crm_cust_info;
 GO
